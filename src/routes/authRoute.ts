@@ -1,5 +1,5 @@
 import express from "express";
-import { googleAuth, googleCallback, logout, getCurrentUser } from "../controllers/authControllor";
+import { CurrentUser, googleAuth, googleCallback, logout } from "../controllers/authControllor";
 
 const router = express.Router();
 
@@ -12,7 +12,8 @@ router.get("/google/callback", googleCallback);
 // Logout
 router.get("/logout", logout);
 
-// Get Current User
-router.get("/me", getCurrentUser);
+//curent user
+router.get("/current", CurrentUser)
+
 
 export default router;
